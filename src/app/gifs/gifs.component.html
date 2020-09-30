@@ -1,20 +1,18 @@
 <div class="container">
     <div class="jumbotron">GIFS</div>
     <div class="row">
-      <div>
-        <div class="col-md-4">
+    
+        <div class="col-md-4"  *ngFor='let gif of gifs'>
             <div class="card" id="">
               <div class="card-body">
-                <img class="card-img-body" src="" alt="">
-                <p class='card-footer'>Hawaiian pizza: Has pineapples and bacon</p>
+                <img class="card-img-body" src="{{gif.image}}" style="height: 100%; width: 100%" alt="">
+                <p class='card-footer'>{{gif.title}}</p>
       
               </div>
       
             </div>
         </div>
-      </div>
-        
-      
       
     </div>
-  </div>
+</div>
+
