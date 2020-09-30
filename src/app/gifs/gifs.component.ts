@@ -25,7 +25,7 @@ export class GifsComponent implements OnInit {
   }
 
   gifContent() {
-    this.http.get("https://api.giphy.com/v1/gifs/trending?api_key=PWVU2kUYV18ckDvJrsUFWf27iPELR1Lw&limit=25&rating=g").subscribe(response =>{
+    this.http.get("https://api.giphy.com/v1/gifs/trending?api_key=PWVU2kUYV18ckDvJrsUFWf27iPELR1Lw&limit=30&rating=g").subscribe(response =>{
       const gifArray = response['data'] && this.gifImages(response['data']);
       this.gifs = gifArray
     })
