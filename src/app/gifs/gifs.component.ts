@@ -16,19 +16,32 @@ export class GifsComponent implements OnInit {
     value: ''
   }
   //searchValue = this.searchWords.value;
-  
+  edited = false
 
   showGif(searchValue) {
     console.log(searchValue)
+    
     
     if(searchValue !== '') {
       this.searchService.displayGif(searchValue).subscribe((response:any) => {
         const gifArray = this.gifImages(response['data']);
         this.gifs = gifArray
       })
+      this.edited = true
     }
     
     
+  }
+
+  moreGifs(searchValue) {
+    if(searchValue !== '') {
+      this.searchService.limit++
+      this.searchService.displayGif(searchValue).subscribe((response:any) => {
+        const gifArray = this.gifImages(response['data']);
+        this.gifs = gifArray
+      })
+      
+    }
   }
 
   
@@ -53,6 +66,8 @@ export class GifsComponent implements OnInit {
       this.gifs = gifArray
     })
   }
+
+  
 
   ngOnInit() {
     this.gifContent()

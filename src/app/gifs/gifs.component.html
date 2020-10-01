@@ -17,10 +17,15 @@
                 <p class='card-footer'>{{gif.title}}</p>
       
               </div>
-      
+              
             </div>
+        
         </div>
-      
+        
+        
+    </div>
+    <div style="text-align: center" *ngIf='edited'>
+        <button class="btn btn-warning" (click) = "moreGifs(searchWords.value)">Load more</button>
     </div>
 </div>
 
