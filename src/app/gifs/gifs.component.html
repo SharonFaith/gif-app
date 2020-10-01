@@ -1,5 +1,13 @@
 <div class="container">
     <div class="jumbotron">GIFS</div>
+    <div class="container-fluid">
+        <form #searchForm = 'ngForm'>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="search" style="width: 50%; display: inline-block;" name="value" [(ngModel)] = "searchWords.value"> &nbsp; <button class="btn btn-secondary" style="display: inline-block;" (click)="showGif(searchWords.value)" type="submit">search</button>
+            </div>
+            Searching for: {{searchWords.value}}
+        </form>
+    </div>
     <div class="row">
     
         <div class="col-md-4"  *ngFor='let gif of gifs'>

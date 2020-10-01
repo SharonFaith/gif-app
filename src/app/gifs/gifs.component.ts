@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-
+import { TrendingService } from '../trending.service'
+import { environment } from '../../environments/environment';
+import { SearchService } from '../search.service'
 
 @Component({
   selector: 'app-gifs',
@@ -10,7 +12,28 @@ import { HttpClient } from '@angular/common/http'
 export class GifsComponent implements OnInit {
   gifs;
 
-  constructor(private http: HttpClient) { }
+  searchWords = {
+    value: ''
+  }
+  //searchValue = this.searchWords.value;
+  
+
+  showGif(searchValue) {
+    console.log(searchValue)
+    
+    if(searchValue !== '') {
+      this.searchService.displayGif(searchValue).subscribe((response:any) => {
+        const gifArray = this.gifImages(response['data']);
+        this.gifs = gifArray
+      })
+    }
+    
+    
+  }
+
+  
+
+  constructor(private http: HttpClient, private trendingService: TrendingService, private searchService: SearchService) { }
 
   gifImages(response) {
     let imageArray = []
@@ -25,8 +48,8 @@ export class GifsComponent implements OnInit {
   }
 
   gifContent() {
-    this.http.get("https://api.giphy.com/v1/gifs/trending?api_key=PWVU2kUYV18ckDvJrsUFWf27iPELR1Lw&limit=30&rating=g").subscribe(response =>{
-      const gifArray = response['data'] && this.gifImages(response['data']);
+    this.trendingService.getTrending().subscribe(response =>{
+      const gifArray = this.gifImages(response['data']);
       this.gifs = gifArray
     })
   }
