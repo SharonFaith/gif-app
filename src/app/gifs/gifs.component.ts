@@ -17,6 +17,7 @@ export class GifsComponent implements OnInit {
   }
   //searchValue = this.searchWords.value;
   edited = false
+  loading = true
 
   showGif(searchValue) {
     console.log(searchValue)
@@ -28,6 +29,7 @@ export class GifsComponent implements OnInit {
         this.gifs = gifArray
       })
       this.edited = true
+      this.loading = false
     }
     
     
@@ -65,12 +67,14 @@ export class GifsComponent implements OnInit {
       const gifArray = this.gifImages(response['data']);
       this.gifs = gifArray
     })
+    
   }
 
   
 
   ngOnInit() {
-    this.gifContent()
+    this.gifContent();
+    this.loading = false
 
   }
 

@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GifsComponent } from './gifs/gifs.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GifsComponent
+    GifsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
