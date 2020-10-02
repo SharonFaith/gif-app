@@ -1,26 +1,36 @@
-# GifApp
+# Gifs
+#### A web application
+#### By **Sharon Faith**
+## Description
+This is a website that enables users to view and search for trending gifs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
-## Development server
+## Setup/Installation Requirements
+* Use a desktop or laptop, phone or tablet.
+* Access the live site at: https://sharonfaith.github.io/gif-app/
+* To clone, go to URL : https://github.com/SharonFaith/gif-app/ then clone or download repository
+* Unzip the file
+* Move contents to folder you desire
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Known Bugs
+- No known bugs
 
-## Code scaffolding
+## Technologies Used
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+- HTML and CSS
+- Typescript
+- Bootstrap
+- JavaScript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Support and contact details
+Github account: SharonFaith
+### License
+*MIT License*
+Copyright (c) {2020} **Sharon Faith**
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
