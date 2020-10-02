@@ -1,27 +1,29 @@
-<div class="container">
-    <div class="jumbotron">GIFS</div>
-
+<div class="container" style="color: white; background-color: black;">
+    <app-navbar></app-navbar>
     
+    <div class="" style="text-align: center" *ngIf='loading'>
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
 
     <div class="container-fluid" style="text-align: center">
         <form #searchForm = 'ngForm'>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="search" style="width: 50%; display: inline-block;" name="value" [(ngModel)] = "searchWords.value"> &nbsp; <button class="btn btn-secondary" style="display: inline-block;" (click)="showGif(searchWords.value)" type="submit">search</button>
+                <input type="text" class="form-control" placeholder="search" style="width: 90%; display: inline-block;" name="value" [(ngModel)] = "searchWords.value"> &nbsp; <button class="btn btn-secondary" style="display: inline-block;" (click)="showGif(searchWords.value)" type="submit">search</button>
             </div>
             Searching for: {{searchWords.value}}
         </form>
     </div>
     <hr>
-    <div><h5>Trending</h5></div>
+    <hr>
+    <hr>
+    <div><h5><strong>Trending</strong> </h5></div>
     <div class="row">
     
         <div class="col-md-4"  *ngFor='let gif of gifs'>
             <div class="card" id="">
-              <div class="card-header" *ngIf='loading'>
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-              </div>
+              
               <div class="card-body">
                 
                 <img class="card-img-body" src="{{gif.image}}" style="height: 100%; width: 100%" alt="">
